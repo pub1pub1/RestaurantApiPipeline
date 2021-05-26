@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: pubpubrestaurantapipipeline 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pubpubrestaurantapipipeline
+  template:
+    metadata:
+      labels:
+        app: pubpubrestaurantapipipeline 
+    spec:
+      containers:
+        - name: pubpubrestaurantapipipeline 
+          image: tmpacr2021.azurecr.io/pubpubrestaurantapipipeline
+          ports:
+          - containerPort: 9001
